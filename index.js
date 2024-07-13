@@ -1,6 +1,6 @@
 var play = confirm("shell we play rock paper scissor ?");
 if (play) {
-  let playerchose = prompt("pls enter rock paper scissor");
+  let playerchose = prompt("pls enter 'rock'- 'paper' - 'scissor'");
   if (playerchose) {
     let playes = playerchose.toLowerCase().trim();
     if (playes === "rock" || playes === "paper" || playes === "scissor") {

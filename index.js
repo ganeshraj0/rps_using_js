@@ -1,26 +1,24 @@
-var play = confirm("shell we play rock paper scissor ?");
+var play = confirm ("shell we play rock paper scissor ?");
 if (play) {
-  let playerchose = prompt("pls enter 'rock'- 'paper' - 'scissor'");
+  let playerchose = prompt("pls enter 'rock' or 'paper' or 'scissor'");
   if (playerchose) {
     let playes = playerchose.toLowerCase().trim();
     if (playes === "rock" || playes === "paper" || playes === "scissor") {
-      let computerchose = Math.floor(Math.random() * 3 + 1);
-      let computer =
-        computerchose === 1
-          ? "rack"
-          : computerchose === 2
+      let computerchose = Math.floor(Math.random() * 3 );
+      let computer = computerchose === 0
+          ? "rock"
+          : computerchose === 1
           ? "paper"
           : "scissor";
       let result =
-        playes === computer
-          ? "tie game !"
+        playes === computer ?`player: ${playes}\ncomputer:${computer}\n tie game !`
           : playes === "rock" && computer === "paper"
-          ? "Computer Wins!"
+          ? `player: ${playes}\ncomputer:${computer}\nComputer Wins!`
           : playes === "paper" && computer === "scissor"
-          ? "Computer Wins!"
+          ? `player: ${playes}\ncomputer:${computer}\nComputer Wins!`
           : playes === "scissor" && computer === "rock"
-          ? "Computer Wins! "
-          : "Player Wins :) ";
+          ? `player: ${playes}\ncomputer:${computer}\nComputer Wins!`
+          : `player: ${playes}\ncomputer:${computer}\nPlayer Wins :) `
       alert(result);
       let playAgain = confirm("Play Again? ");
       playAgain ? location.reload() : alert("Ok, thanks for playing ");
